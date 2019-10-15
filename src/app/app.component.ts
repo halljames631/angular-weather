@@ -7,13 +7,14 @@ import { WeatherService } from './weather.service'
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  data = Object;
+  data: Object;
 
   constructor(private weather: WeatherService){}
 
   ngOnInit() {
     this.weather.getWeather().subscribe(data => {
       console.log(data)
+      this.data = data
     })
   }
 }
